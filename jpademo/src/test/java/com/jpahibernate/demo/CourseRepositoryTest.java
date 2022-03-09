@@ -1,0 +1,65 @@
+package com.jpahibernate.demo;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.junit4.SpringRunner;
+
+//import com.jpahibernate.demo.CourseRepository;
+//import com.jpahibernate.demo.tanjila_Course;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+class CourseRepositoryTest {
+
+	//private Logger logger = LoggerFactory.getLogger(this.getClass());
+	@Autowired
+	CourseRepository repository;
+
+	@Test
+	public void findById_basic() {
+
+	tanjila_Course course = repository.findById(1001L);
+	assertEquals("JPA in 50 steps", course.getName());
+	//logger.info("Testing is Running");
+	//System.out.println("Testing is Running");
+	}
+	
+	@Test
+	@DirtiesContext
+	public void save_basic() {
+		//get a course
+		tanjila_Course course = repository.findById(1015L);
+		assertEquals("Unit testing", course.getName());
+		
+		//update details
+		course.setName("SQL queries");
+		repository.save(course);
+		
+		//check the value
+		tanjila_Course course1 = repository.findById(1015L);
+		assertEquals("SQL queries", course1.getName());
+		//assertNull(repository.findById(1014L));  //compare 
+	}
+	@Test
+	@DirtiesContext
+	public void playWithEntityManager() {
+		repository.playWithEntityManager();
+	}
+//	@Test
+//	@DirtiesContext
+//	public void deleteById_basic() {
+//
+//		repository.deleteById(1003L);
+//		assertNull(repository.findById(1003L)); // to check particular entry does not exist
+//		// here in this part of testing it is changing the data which is present in database
+//	}
+//	
+}
