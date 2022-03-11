@@ -9,22 +9,26 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class JpademoApplication implements CommandLineRunner {
-
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private CourseRepository repository;
+	private CourseRepository courseRepository;
+	
+	@Autowired
+	private StudentRepository studentRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(JpademoApplication.class, args);
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
-		tanjila_Course course = repository.findById(1001L);
-		logger.info("tanjila_Course 1001 -> {}", course);
-		// repository.deleteById(1003L);    here we are using this in unit testing
-		//repository.save(new tanjila_Course("Unit testing"));
+public void run(String... args) throws Exception {
+		studentRepository.SaveStudentWithPassport();
+		//repository.playWithEntityManager();
+//		tanjila_course course = repository.findById(1001L);  //find with id 
+//		logger.info("tanjila_course 1001 -> {}", course);		//printing the line
+//		 repository.deleteById(1003L);  						 //delete entry 
+//		repository.save(new tanjila_course("Unit testing"));  //inserting entry 
 		
 }
 

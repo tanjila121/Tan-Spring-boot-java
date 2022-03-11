@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class CourseRepositoryTest {
+class StudentRepositoryTest {
 
 	//private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Autowired
@@ -32,34 +32,6 @@ class CourseRepositoryTest {
 	//System.out.println("Testing is Running");
 	}
 	
-	@Test
-	@DirtiesContext
-	public void save_basic() {
-		//get a course
-		TanjilaCourse course = repository.findById(1015L);
-		assertEquals("Unit testing", course.getName());
-		
-		//update details
-		course.setName("SQL queries");
-		repository.save(course);
-		
-		//check the value
-		TanjilaCourse course1 = repository.findById(1019L);
-		assertEquals("JPA queries", course1.getName());
-		//assertNull(repository.findById(1014L));  //compare 
-	}
-	@Test
-	@DirtiesContext
-	public void playWithEntityManager() {
-		repository.playWithEntityManager();
-	}
-//	@Test
-//	@DirtiesContext
-//	public void deleteById_basic() {
-//
-//		repository.deleteById(1003L);
-//		assertNull(repository.findById(1003L)); // to check particular entry does not exist
-//		// here in this part of testing it is changing the data which is present in database
-//	}
-//	
+	
 }
+
