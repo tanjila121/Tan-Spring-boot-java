@@ -1,12 +1,16 @@
 package com.jpahibernate.demo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,6 +26,12 @@ public class TanjilaCourse {
 private Long id;
 
 private String name;
+
+@OneToMany(mappedBy = "course")
+private List<TanjilaReview> reviews = new ArrayList<>();
+
+@ManyToMany
+private List<TanjilaStudent> students = new ArrayList<>();
 
 @UpdateTimestamp
 private LocalDateTime lastUpdatedDate;
@@ -47,13 +57,36 @@ public void setName(String name) {
 	this.name = name;
 }
 
+public List<TanjilaReview> getReviews() {
+	return reviews;
+}
+
+public void addReview(TanjilaReview review) {
+	this.reviews.add(review);
+}
+public void removeReview(TanjilaReview review) {
+	this.reviews.remove(review);
+}
+
+public void setReviews(List<TanjilaReview> reviews) {
+	this.reviews = reviews;
+}
+
 public Long getId() {
 	return id;
 }
 
+public List<TanjilaStudent> getStudents() {
+	return students;
+}
+
+public void addStudents(TanjilaStudent student) {
+	this.students.add(student);
+}
+
 @Override
 public String toString() {
-	return  String.format("tanjila_course",name);
+	return  String.format("TanjilaCourse",name);
 }
 
 

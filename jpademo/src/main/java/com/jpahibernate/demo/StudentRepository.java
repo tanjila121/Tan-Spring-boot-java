@@ -1,9 +1,6 @@
 package com.jpahibernate.demo;
 
 import javax.persistence.EntityManager;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,18 +26,37 @@ public class StudentRepository {
 		return student;
 	}
 	
-	public void SaveStudentWithPassport() {
-		TanjilaPassport passport = new TanjilaPassport("B345123");
-		em.persist(passport);
+	public void someOperationToUnderstandPersistentContext() {
+		//retrieve student
+		TanjilaStudent student = em.find(TanjilaStudent.class, 2004L);
+		//persistence Context( student)
 		
-	    TanjilaStudent student1 = new TanjilaStudent("Abhi"); //insert first and then update it
-	    
-	    student1.setPassport(passport);
-	    em.persist(student1);
+		//retrieve passport
+		TanjilaPassport passport=student.getPassport();
+		//persistence Context( student and passport)
+		
+		//update passport
+		passport.setNumber("H786512");
+		//persistence Context( student and passport++)
+		
+		//update student
+		student.setName("Sabina");
+		//persistence Context( student++ and passport++)
+		
 	}
 	
+//	public void SaveStudentWithPassport() {
+//		TanjilaPassport passport = new TanjilaPassport("F655123");
+//		em.persist(passport);
+//		
+//	    TanjilaStudent student1 = new TanjilaStudent("Siya"); //insert first and then update it
+//	    
+//	    student1.setPassport(passport);
+//	    em.persist(student1);
+//	}
+	
 //	public void deleteById(Long id) {
-//		tanjila_Student student = findById(1003L);
+//		TanjilaStudent student = findById(2005L);
 //		em.remove(student);   
 //		}
 

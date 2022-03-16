@@ -1,5 +1,8 @@
 package com.jpahibernate.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +26,21 @@ public class JpademoApplication implements CommandLineRunner {
 
 	@Override
 public void run(String... args) throws Exception {
-		studentRepository.SaveStudentWithPassport();
+	
+		//	studentRepository.SaveStudentWithPassport();
 		//repository.playWithEntityManager();
 //		tanjila_course course = repository.findById(1001L);  //find with id 
 //		logger.info("tanjila_course 1001 -> {}", course);		//printing the line
-//		 repository.deleteById(1003L);  						 //delete entry 
+		//studentRepository.deleteById(2005L);  						 //delete entry 
 //		repository.save(new tanjila_course("Unit testing"));  //inserting entry 
+		
+		// courseRepository.addHardcodedReviewsForCourse();
+		
+//		List<TanjilaReview> reviews= new ArrayList<>();
+//		reviews.add(new TanjilaReview("4","New things to learn"));
+//	    reviews.add(new TanjilaReview("5","Easy to learn"));
+//		courseRepository.addReviewsForCourse(1004l, reviews);
+		
 		
 }
 
