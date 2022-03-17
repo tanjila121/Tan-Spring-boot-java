@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
@@ -23,7 +25,12 @@ private String name;
 @OneToOne(fetch=FetchType.LAZY)
 private TanjilaPassport passport ;
 
-@ManyToMany(mappedBy="students")
+
+@ManyToMany
+@JoinTable(name="TanjilaStudent_TanjilaCourse_course",
+joinColumns = @JoinColumn(name = "student_id"),
+inverseJoinColumns = @JoinColumn(name = "course_id"))
+
 private List<TanjilaCourse> courses = new ArrayList<>();
 
 protected TanjilaStudent() {
@@ -58,6 +65,7 @@ public void setPassport(TanjilaPassport passport) {
 	this.passport = passport;
 }
 
+
 public Long getId() {
 	return id;
 }
@@ -67,6 +75,5 @@ public String toString() {
 	return String.format("TanjilaStudent[%s]", name);
 }
 
-
-
+ 
 }

@@ -1,5 +1,6 @@
 package com.jpahibernate.demo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,9 @@ public class JpademoApplication implements CommandLineRunner {
 	
 	@Autowired
 	private StudentRepository studentRepository;
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(JpademoApplication.class, args);
@@ -41,7 +45,11 @@ public void run(String... args) throws Exception {
 //	    reviews.add(new TanjilaReview("5","Easy to learn"));
 //		courseRepository.addReviewsForCourse(1004l, reviews);
 		
-		
-}
+//		studentRepository.insertHardcodedStudentAndCourse();
+//		studentRepository.insertStudentAndCourse(new TanjilaStudent("Ginny"),new TanjilaCourse("Entities"));
+		employeeRepository.insert(new TaPartTimeEmployee("Jill", new BigDecimal("50")));
+		employeeRepository.insert(new TaFullTimeEmployee("Jack", new BigDecimal("10000")));
+		System.out.printf("All Employees ->{}"+ employeeRepository.retrieveAllEmployees());
+	}
 
 }

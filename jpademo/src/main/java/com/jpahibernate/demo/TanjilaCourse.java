@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -30,7 +31,8 @@ private String name;
 @OneToMany(mappedBy = "course")
 private List<TanjilaReview> reviews = new ArrayList<>();
 
-@ManyToMany
+@ManyToMany(mappedBy="courses")
+
 private List<TanjilaStudent> students = new ArrayList<>();
 
 @UpdateTimestamp

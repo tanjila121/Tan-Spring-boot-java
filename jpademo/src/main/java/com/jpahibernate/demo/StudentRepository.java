@@ -28,7 +28,7 @@ public class StudentRepository {
 	
 	public void someOperationToUnderstandPersistentContext() {
 		//retrieve student
-		TanjilaStudent student = em.find(TanjilaStudent.class, 2004L);
+		TanjilaStudent student = em.find(TanjilaStudent.class, 2009L);
 		//persistence Context( student)
 		
 		//retrieve passport
@@ -36,11 +36,11 @@ public class StudentRepository {
 		//persistence Context( student and passport)
 		
 		//update passport
-		passport.setNumber("H786512");
+		passport.setNumber("W126512");
 		//persistence Context( student and passport++)
 		
 		//update student
-		student.setName("Sabina");
+		student.setName("Sneha");
 		//persistence Context( student++ and passport++)
 		
 	}
@@ -59,5 +59,44 @@ public class StudentRepository {
 //		TanjilaStudent student = findById(2005L);
 //		em.remove(student);   
 //		}
-
+//	public void insertHardcodedStudentAndCourse() {
+//		TanjilaStudent student = new TanjilaStudent("Amara");
+//		TanjilaCourse course = new TanjilaCourse("Microservices");
+//		em.persist(student);
+//		em.persist(course);
+//		//new to persist the relationship between student and course
+//		student.addCourse(course);
+//		course.addStudents(student); 
+//		
+//		//persist owning site
+//		em.persist(student);
+		/*  inserted in 3 tables student course and new joint table student_course
+   1 	insert 
+    into
+        TanjilaStudent
+        (name, passport_id) 
+    values
+        (?, ?)
+  2     insert 
+    into
+        TanjilaCourse
+        (createdDate, lastUpdatedDate, name) 
+    values
+        (?, ?, ?) 
+  3       insert 
+    into
+        TanjilaStudent_TanjilaCourse_course
+        (student_id, course_id) 
+    values
+        (?, ?)*/
+//	}
+//	public void insertStudentAndCourse(TanjilaStudent student,TanjilaCourse course) {
+//
+//		student.addCourse(course);
+//		course.addStudents(student); 
+//		
+//		em.persist(student);
+//		em.persist(course);
+//		}
+	
 }

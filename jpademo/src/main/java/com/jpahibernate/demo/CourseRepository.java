@@ -51,11 +51,11 @@ public class CourseRepository {
 		
 	}
 
-	public void addHardcodedReviewsForCourse() {
+//	public void addHardcodedReviewsForCourse() {
 //		//get the course 1002
 //		TanjilaCourse course =findById(1002L);
 //		System.out.println("course.getReviews()->{}"+course.getReviews());
-
+//
 //		//add 2 reviews to it
 //		TanjilaReview review1 = new TanjilaReview("5","Great hands on stuff");
 //		TanjilaReview review2 = new TanjilaReview("5","Good work");
@@ -70,7 +70,7 @@ public class CourseRepository {
 //		//save it to the database
 //		em.persist(review1);
 //		em.persist(review2);
-	}
+//	}
 	public void addReviewsForCourse(Long courseId, List<TanjilaReview> reviews) {
 	
 //		TanjilaCourse course =findById(courseId);
