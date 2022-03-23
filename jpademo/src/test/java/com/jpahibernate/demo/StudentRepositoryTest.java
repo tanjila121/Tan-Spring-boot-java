@@ -29,19 +29,19 @@ class StudentRepositoryTest {
 	@Autowired
 	EntityManager em;
 
-	@Test
-//	@Transactional
-	public void someTest() {
-		repository.someOperationToUnderstandPersistentContext();
-	}
+//	@Test
+////	@Transactional
+//	public void someTest() {
+//		repository.someOperationToUnderstandPersistentContext();
+//	}
 	
-	@Test
-	@Transactional
-	public void RetriveStudentAndPassportDetails() {
-		TanjilaStudent student = em.find(TanjilaStudent.class, 2004L);
-		logger.info("student ->{}",student);
-		logger.info("passport ->{}",student.getPassport());
-	}
+//	@Test
+//	@Transactional
+//	public void RetriveStudentAndPassportDetails() {
+//		TanjilaStudent student = em.find(TanjilaStudent.class, 2004L);
+//		logger.info("student ->{}",student);
+//		logger.info("passport ->{}",student.getPassport());
+//	}
 	
 	@Test
 	@Transactional
@@ -58,6 +58,15 @@ class StudentRepositoryTest {
 		System.out.printf("student ->{}"+student);
 		System.out.printf("courses ->{}"+student.getCourses());
 		
+	}
+	@Test
+	@Transactional
+	public void setAddressDetails() {
+		TanjilaStudent student = em.find(TanjilaStudent.class, 2003L);
+		student.setAddress(new Address("98 no","flat","Saswad"));
+		em.flush(); 			//to ensure this update will be pushed to database
+		System.out.printf("student ->{}"+student);
+		System.out.printf("passport ->{}"+student.getPassport());
 	}
 	
 }

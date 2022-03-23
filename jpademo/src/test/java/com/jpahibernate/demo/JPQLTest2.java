@@ -34,6 +34,7 @@ class JPQLTest2 {
 //		List resultList = query.getResultList();
 //		logger.info("Select c From tanjila_Course c ->{}", resultList);
 //	}
+	
 //	@Test
 //	public void jpql_typed() {
 //		TypedQuery<tanjila_Course> query = 

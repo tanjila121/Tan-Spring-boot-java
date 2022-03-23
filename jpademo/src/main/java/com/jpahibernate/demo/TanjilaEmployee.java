@@ -9,12 +9,15 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
-@Entity
-@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+//@Entity
+@MappedSuperclass
+//@Inheritance(strategy=InheritanceType.JOINED)
+//@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 //@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 //@DiscriminatorColumn(name="employee_type")
 public abstract class TanjilaEmployee {

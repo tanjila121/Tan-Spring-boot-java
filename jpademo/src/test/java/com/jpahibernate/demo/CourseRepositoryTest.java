@@ -32,11 +32,25 @@ class CourseRepositoryTest {
 	@Test
 	public void findById_basic() {
 
-//	TanjilaCourse course = repository.findById(1001L);
-//	assertEquals("JPA in 50 steps", course.getName());
-	//logger.info("Testing is Running");
-	//System.out.println("Testing is Running");
+	TanjilaCourse course = repository.findById(1001L);
+	assertEquals("JPA in 50 steps", course.getName());
+	System.out.println("Testing is Running");
 	}
+	@Test
+//	@Transactional
+	public void findById_firstLevelCacheDemo() {
+
+	TanjilaCourse course = repository.findById(1001L);
+	System.out.println("First Course Retrieved {}"+course);
+	
+	TanjilaCourse course1 = repository.findById(1001L);
+	System.out.println("First Course Retrieved Again {}"+course1);
+	
+	assertEquals("JPA in 50 steps", course.getName());
+	assertEquals("JPA in 50 steps", course1.getName());
+
+	}
+	
 	
 //	@Test
 //	@DirtiesContext
@@ -54,11 +68,11 @@ class CourseRepositoryTest {
 //		assertEquals("JPA queries", course1.getName());
 //		//assertNull(repository.findById(1014L));  //compare 
 //	}
-	@Test
-	@DirtiesContext
-	public void playWithEntityManager() {
-		repository.playWithEntityManager();
-	}
+//	@Test
+//	@DirtiesContext
+//	public void playWithEntityManager() {
+//		repository.playWithEntityManager();
+//	}
 	
 //	@Test   //one to many
 //	@Transactional
@@ -75,14 +89,14 @@ class CourseRepositoryTest {
 //	}
 	
 	
-//	@Test
-//	@DirtiesContext
-//	public void deleteById_basic() {
-//
-//		repository.deleteById(1003L);
-//		assertNull(repository.findById(1003L)); // to check particular entry does not exist
-//		// here in this part of testing it is changing the data which is present in database
-//	}
+	@Test
+	@DirtiesContext
+	public void deleteById_basic() {
+
+		repository.deleteById(1003L);
+		assertNull(repository.findById(1004L)); // to check particular entry does not exist
+		// here in this part of testing it is changing the data which is present in database
+	}
 
 	
 }

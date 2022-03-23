@@ -2,6 +2,8 @@ package com.jpahibernate.demo;
 
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -12,7 +14,9 @@ public class TanjilaReview {
 @Id
 @GeneratedValue
 private Long id;
-private String rating;
+
+@Enumerated(EnumType.STRING)
+private ReviewRating rating;
 
 private String description;
 
@@ -23,7 +27,7 @@ protected TanjilaReview() {
 
 }
 
-public TanjilaReview(String rating,String description) {
+public TanjilaReview(ReviewRating rating,String description) {
 this.rating = rating;
 this.description = description;
 }
@@ -40,11 +44,11 @@ public Long getId() {
 	return id;
 }
 
-public String getRating() {
+public ReviewRating getRating() {
 	return rating;
 }
 
-public void setRating(String rating) {
+public void setRating(ReviewRating rating) {
 	this.rating = rating;
 }
 

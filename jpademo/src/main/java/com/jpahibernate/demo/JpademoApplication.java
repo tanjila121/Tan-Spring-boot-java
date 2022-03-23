@@ -47,9 +47,11 @@ public void run(String... args) throws Exception {
 		
 //		studentRepository.insertHardcodedStudentAndCourse();
 //		studentRepository.insertStudentAndCourse(new TanjilaStudent("Ginny"),new TanjilaCourse("Entities"));
-		employeeRepository.insert(new TaPartTimeEmployee("Jill", new BigDecimal("50")));
-		employeeRepository.insert(new TaFullTimeEmployee("Jack", new BigDecimal("10000")));
-		System.out.printf("All Employees ->{}"+ employeeRepository.retrieveAllEmployees());
+		
+//		employeeRepository.insert(new TaPartTimeEmployee("Harry", new BigDecimal("40")));
+//		employeeRepository.insert(new TaFullTimeEmployee("Pooja", new BigDecimal("15000")));
+		System.out.printf("All Employees ->{}"+ employeeRepository.retrieveAllPartTimeEmployees());
+		System.out.printf("All Employees ->{}"+ employeeRepository.retrieveAllFullTimeEmployees());
 	}
 
 }

@@ -4,6 +4,7 @@ package com.jpahibernate.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,9 +23,11 @@ private Long id;
                        //RENAME TABLE tanjila_Student TO tanjila_student;
 private String name;
 
+@Embedded
+private Address address;
+
 @OneToOne(fetch=FetchType.LAZY)
 private TanjilaPassport passport ;
-
 
 @ManyToMany
 @JoinTable(name="TanjilaStudent_TanjilaCourse_course",
@@ -68,6 +71,15 @@ public void setPassport(TanjilaPassport passport) {
 
 public Long getId() {
 	return id;
+}
+
+
+public Address getAddress() {
+	return address;
+}
+
+public void setAddress(Address address) {
+	this.address = address;
 }
 
 @Override

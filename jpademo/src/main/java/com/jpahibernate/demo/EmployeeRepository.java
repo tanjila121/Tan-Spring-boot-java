@@ -14,13 +14,22 @@ public class EmployeeRepository {
 	
 	@Autowired
 	EntityManager em;
+	
 	//insert the employee
 	public void insert(TanjilaEmployee employee) {
 		em.persist(employee);
 	}
-	//retrieve all employees
-	public List<TanjilaEmployee> retrieveAllEmployees() {
-		return em.createQuery("select e from TanjilaEmployee e",TanjilaEmployee.class).getResultList();
+	//retrieve all part time employees
+	public List<TaPartTimeEmployee> retrieveAllPartTimeEmployees() {
+		return em.createQuery("select e from TaPartTimeEmployee e",TaPartTimeEmployee.class).getResultList();
+		//SELECT * FROM ta_part_time_employee ,TanjilaEmployee WHERE ta_part_time_employee.id = TanjilaEmployee.id
+		
 		}
+	//retrieve all part time employees
+		public List<TaFullTimeEmployee> retrieveAllFullTimeEmployees() {
+			return em.createQuery("select e from TaFullTimeEmployee e",TaFullTimeEmployee.class).getResultList();
+			//SELECT * FROM ta_full_time_employee ,TanjilaEmployee WHERE ta_full_time_employee.id = TanjilaEmployee.id
+			
+			}
 
 }
