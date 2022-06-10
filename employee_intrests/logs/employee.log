@@ -1,0 +1,66 @@
+2022-05-23 15:11:39.887  INFO 11360 --- [main] com.example.tan.EmplIntrestsApplication  : Starting EmplIntrestsApplication using Java 17.0.1 on DESKTOP-26I3SU5 with PID 11360 (C:\Users\HP\Desktop\employee\empl_intrests\target\classes started by HP in C:\Users\HP\Desktop\employee\empl_intrests)
+2022-05-23 15:11:39.894  INFO 11360 --- [main] com.example.tan.EmplIntrestsApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-05-23 15:11:42.580  INFO 11360 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-23 15:11:42.604  INFO 11360 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-23 15:11:42.605  INFO 11360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-23 15:11:42.958  INFO 11360 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-23 15:11:42.959  INFO 11360 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2970 ms
+2022-05-23 15:11:45.261  WARN 11360 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 45ffa084-78c2-49a6-bfca-8c6d1cdeff78
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-23 15:11:45.607  INFO 11360 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@39652a30, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5763a655, org.springframework.security.web.context.SecurityContextPersistenceFilter@787988f4, org.springframework.security.web.header.HeaderWriterFilter@2eb0cefe, org.springframework.security.web.csrf.CsrfFilter@6459f4ea, org.springframework.security.web.authentication.logout.LogoutFilter@29bbc391, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@10817f46, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51888019, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@40c8067, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@477523ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28d739f1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c5d3a37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@46bb0bdf, org.springframework.security.web.session.SessionManagementFilter@7d59e968, org.springframework.security.web.access.ExceptionTranslationFilter@7a0ab480, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@584ca390]
+2022-05-23 15:11:45.708  WARN 11360 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-05-23 15:11:45.717  INFO 11360 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-05-23 15:11:45.741  INFO 11360 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-23 15:11:45.778 ERROR 11360 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-05-23 15:23:22.141  INFO 16348 --- [main] com.example.tan.EmplIntrestsApplication  : Starting EmplIntrestsApplication using Java 17.0.1 on DESKTOP-26I3SU5 with PID 16348 (C:\Users\HP\Desktop\employee\empl_intrests\target\classes started by HP in C:\Users\HP\Desktop\employee\empl_intrests)
+2022-05-23 15:23:22.147  INFO 16348 --- [main] com.example.tan.EmplIntrestsApplication  : No active profile set, falling back to 1 default profile: "default"
+2022-05-23 15:23:24.403  INFO 16348 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-05-23 15:23:24.427  INFO 16348 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-05-23 15:23:24.428  INFO 16348 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-05-23 15:23:24.595  INFO 16348 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-05-23 15:23:24.596  INFO 16348 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2370 ms
+2022-05-23 15:23:26.310  WARN 16348 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 41cb3e68-064e-410d-abe1-92d685e908eb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2022-05-23 15:23:26.613  INFO 16348 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30b3d899, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78d92eef, org.springframework.security.web.context.SecurityContextPersistenceFilter@51888019, org.springframework.security.web.header.HeaderWriterFilter@28d739f1, org.springframework.security.web.csrf.CsrfFilter@6b70d1fb, org.springframework.security.web.authentication.logout.LogoutFilter@76563ae7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1e2445f6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2407a36c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@61d60e38, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@723742b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5fb3111a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4aaecabd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e95973c, org.springframework.security.web.session.SessionManagementFilter@2b43f314, org.springframework.security.web.access.ExceptionTranslationFilter@212fafd1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7eb27768]
+2022-05-23 15:23:26.719  WARN 16348 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-05-23 15:23:26.728  INFO 16348 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-05-23 15:23:26.746  INFO 16348 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-05-23 15:23:26.782 ERROR 16348 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
