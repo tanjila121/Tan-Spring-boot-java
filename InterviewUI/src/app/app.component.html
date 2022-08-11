@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>dashboard</mat-icon>
+    </button>
+    <span>Scheduled Interviews</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button color="warn" (click)="openDialog()">Add Interview</button>
+  </mat-toolbar>
+  
+<nav class="navbar navbar-expand-sm bg primary navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a href="\interviews" routerLinkActive="active">Interview List</a>
+        </li>
+    </ul>
+</nav>
+<br>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

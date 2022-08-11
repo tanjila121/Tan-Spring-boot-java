@@ -1,0 +1,115 @@
+<h1 mat-dialog-title>Add Interview Form</h1>
+    <div mat-dialog-content>
+        <form [formGroup]="interviewForm">   
+
+            <mat-form-field appearance="outline">
+                            <mat-label>Candidate ID</mat-label>
+                            <mat-select formControlName="Candidate_ID" placeholder="Candidate Name">
+                                <mat-option [value]="candidate.id" *ngFor="let candidate of candidates">{{candidate.name}}</mat-option>
+                                <!-- <mat-option value="4">4</mat-option> -->
+                            </mat-select>
+                            </mat-form-field>
+                
+                            <mat-form-field appearance="outline">
+                                <mat-label>Interviewer ID</mat-label>
+                                <mat-select formControlName="Interviewer_ID" placeholder="Interviewer ID">
+                                    <mat-option [value]="interviewer.id" *ngFor="let interviewer of interviewers">{{interviewer.name}}</mat-option>
+                                </mat-select>
+                                </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Interview Date</mat-label>
+                        <input formControlName="Interview_Date" matInput [matDatepicker]="picker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Day</mat-label>
+                <mat-select formControlName="Interview_Day" placeholder="Day">
+                        <mat-option value="Sunday">Sunday</mat-option>
+                        <mat-option value="Monday">Monday</mat-option>
+                        <mat-option value="Tuesday">Tuesday</mat-option>
+                        <mat-option value="Wednesday">Wednesday</mat-option>
+                        <mat-option value="Thursday">Thursday</mat-option>
+                        <mat-option value="Friday">Friday</mat-option>
+                        <mat-option value="Saturday">Saturday</mat-option>
+                </mat-select>
+                </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Time</mat-label>
+                <input formControlName="Interview_Time" matInput placeholder="Interview Time">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Link</mat-label>
+                <input formControlName="Interview_Link" matInput placeholder="Interview Link">
+            </mat-form-field>
+    
+    
+            <mat-form-field appearance="outline">
+            <mat-label>Interview Result</mat-label>
+            <mat-select formControlName="Interview_Result" placeholder="Result">
+                    <mat-option value="Selected">Selected</mat-option>
+                    <mat-option value="Not Selected">Not Selected</mat-option>
+            </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Created By</mat-label>
+                <mat-select formControlName="Created_By" placeholder="Created By">
+                        <mat-option value="true">1</mat-option>
+                        <mat-option value="false">0</mat-option>
+                </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field appearance="fill">
+                    <mat-label>Creation Date</mat-label>
+                    <input formControlName="Creation_Date" matInput [matDatepicker]="picker1">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+    
+                <mat-form-field appearance="outline">
+                    <mat-label>Modified By</mat-label>
+                    <mat-select formControlName="Modified_By" placeholder="Modified By">
+                            <mat-option value="true">1</mat-option>
+                            <mat-option value="false">0</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Modification Date</mat-label>
+                        <input formControlName="Modification_Date" matInput [matDatepicker]="picker2">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                        <mat-datepicker #picker2></mat-datepicker>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="Status" placeholder="Status">
+                                <mat-option value="true">1</mat-option>
+                                <mat-option value="false">0</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                        
+                        <!-- <mat-form-field appearance="outline">
+                            <mat-label>Candidate ID</mat-label>
+                            <input matInput formControlName="Candidate_ID"  placeholder="Candidate ID">
+                        </mat-form-field>
+            
+                        <mat-form-field appearance="outline">
+                            <mat-label>Interviewer ID</mat-label>
+                            <input matInput formControlName="Interviewer_ID" placeholder="Interviewer ID">
+                        </mat-form-field> -->
+        </form>    
+    </div>
+
+    <div mat-dialog-action [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addInterview()">Save</button>
+    </div>

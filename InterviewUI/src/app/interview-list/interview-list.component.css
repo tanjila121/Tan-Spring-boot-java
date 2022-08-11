@@ -1,0 +1,22 @@
+table {
+    width: 150%;
+    grid-row: auto;
+  }
+
+  .scroll{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+td,th{
+  width: 5%;
+  text-align: center;
+}
+
+.mat-header-cell{
+  text-align: center;
+}
+
+
+  
+  

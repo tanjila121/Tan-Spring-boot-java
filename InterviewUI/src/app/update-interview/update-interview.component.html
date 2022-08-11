@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Update Interview Form</h1>
+    <div mat-dialog-content>
+        <form >
+                    <mat-form-field appearance="fill">
+                        <mat-label>Interview Date</mat-label>
+                        <input [(ngModel)] = "interview.date" [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="picker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                      
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Day</mat-label>
+                <mat-select [(ngModel)] = "interview.day" [ngModelOptions]="{standalone: true}" placeholder="Day">
+                        <mat-option value="Sunday">Sunday</mat-option>
+                        <mat-option value="Monday">Monday</mat-option>
+                        <mat-option value="Tuesday">Tuesday</mat-option>
+                        <mat-option value="Wednesday">Wednesday</mat-option>
+                        <mat-option value="Thursday">Thursday</mat-option>
+                        <mat-option value="Friday">Friday</mat-option>
+                        <mat-option value="Saturday">Saturday</mat-option>
+                </mat-select>
+                </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Time</mat-label>
+                <input [(ngModel)] = "interview.time" [ngModelOptions]="{standalone: true}" matInput placeholder="Interview Time">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Interview Link</mat-label>
+                <input [(ngModel)] = "interview.link" [ngModelOptions]="{standalone: true}" matInput placeholder="Interview Link">
+            </mat-form-field>
+    
+    
+            <mat-form-field appearance="outline">
+            <mat-label>Interview Result</mat-label>
+            <mat-select [(ngModel)] = "interview.result" [ngModelOptions]="{standalone: true}" placeholder="Result">
+                    <mat-option value="Selected">Selected</mat-option>
+                    <mat-option value="Not Selected">Not Selected</mat-option>
+            </mat-select>
+            </mat-form-field>
+        </form>    
+    </div>
+
+    <div mat-dialog-action [align]="'end'">
+            <!-- <button mat-raised-button color="warn" mat-dialog-close>Close</button> -->
+            <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="updateInterview()">Save Changes</button>
+    </div>
